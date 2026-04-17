@@ -1,3 +1,5 @@
+export type ProjectCategory = "Web" | "Mobile" | "Infra" | "Fullstack";
+
 export type Project = {
   slug: string;
   name: string;
@@ -6,6 +8,8 @@ export type Project = {
   team: string;
   role: string;
   status?: "진행중" | "완료";
+  category?: ProjectCategory;
+  cover?: string;
   tech: string[];
   highlights: string[];
   results?: string[];
@@ -22,6 +26,7 @@ export const projects: Project[] = [
     team: "1명 (풀스택)",
     role: "풀스택 개발 및 실시간 다운로드 모니터링 UI 구현",
     status: "진행중",
+    category: "Fullstack",
     tech: [
       "Django",
       "SQLite",
@@ -54,6 +59,7 @@ export const projects: Project[] = [
     team: "2명",
     role: "프론트엔드 개발 및 실시간 캔버스 구현",
     status: "완료",
+    category: "Web",
     tech: ["React", "MUI", "WebSocket", "Canvas", "D3.js"],
     highlights: [
       "MUI + 커스텀 테마로 일관된 UI/UX 구현",
@@ -76,6 +82,7 @@ export const projects: Project[] = [
     team: "6명",
     role: "Android 앱 개발 및 실시간 채팅 기능 구현",
     status: "완료",
+    category: "Mobile",
     tech: ["Kotlin", "Jetpack Compose", "WebSocket", "Stomp"],
     highlights: [
       "Kotlin + Jetpack Compose로 안드로이드 앱 개발",
@@ -94,6 +101,7 @@ export const projects: Project[] = [
     team: "6명",
     role: "프론트엔드 개발 및 보안 로직 구현",
     status: "완료",
+    category: "Web",
     tech: ["React", "Redux", "RSA", "react-beautiful-dnd", "WebSocket", "JWT"],
     highlights: [
       "React 환경 설정 및 Redux 세팅·유지보수",
@@ -113,6 +121,7 @@ export const projects: Project[] = [
     team: "6명",
     role: "팀장, 실시간 화상 게임 로직 및 UI 구현",
     status: "완료",
+    category: "Web",
     tech: ["React", "Redux", "WebRTC", "OpenVidu"],
     highlights: [
       "Figma 전반적 UI/UX 설계 담당",
@@ -133,6 +142,7 @@ export const projects: Project[] = [
     team: "4명",
     role: "프론트엔드 개발 (Drag & Drop 구현)",
     status: "완료",
+    category: "Infra",
     tech: ["React", "Material UI", "react-beautiful-dnd", "Xarrow", "Terraform"],
     highlights: [
       "Kubernetes 환경을 위한 Drag & Drop UI 구현",
