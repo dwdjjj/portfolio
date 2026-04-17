@@ -66,6 +66,7 @@ export const projects: Project[] = [
     role: "프론트엔드 개발 및 실시간 캔버스 구현",
     status: "완료",
     category: "Web",
+    cover: "/images/pc-ai/pc&ai_image.png",
     tech: ["React", "MUI", "WebSocket", "Canvas", "D3.js"],
     highlights: [
       "MUI + 커스텀 테마로 일관된 UI/UX 구현",
@@ -175,6 +176,7 @@ export const projects: Project[] = [
     role: "프론트엔드 개발 (Drag & Drop 구현)",
     status: "완료",
     category: "Infra",
+    cover: "/images/kube-form/kubeform.png",
     tech: ["React", "Material UI", "react-beautiful-dnd", "Xarrow", "Terraform"],
     highlights: [
       "Kubernetes 환경을 위한 Drag & Drop UI 구현",
