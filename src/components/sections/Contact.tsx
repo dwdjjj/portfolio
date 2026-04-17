@@ -17,7 +17,7 @@ export function Contact() {
             </span>
             답장 가능
           </span>
-          <span>서울에서, 함께 만들 제품을 기다리고 있습니다.</span>
+          <span>함께 만들 제품을 기다리고 있습니다.</span>
         </div>
 
         <a
@@ -33,8 +33,8 @@ export function Contact() {
               For work
             </p>
             <p className="mt-3 text-sm text-[var(--color-muted)] sm:text-base">
-              채용 · 외주 · 사이드 프로젝트 제안은 메일이 가장 빠릅니다.
-              평일 기준 하루 안에 회신드리는 것을 목표로 하고 있어요.
+              채용 · 외주 · 사이드 프로젝트 제안은 메일이 가장 빠릅니다. 평일
+              기준 하루 안에 회신드리는 것을 목표로 하고 있어요.
             </p>
             <a
               href={`mailto:${site.email}`}
@@ -54,8 +54,8 @@ export function Contact() {
               Or just say hi
             </p>
             <p className="mt-3 text-sm text-[var(--color-muted)] sm:text-base">
-              기술 잡담이나 포트폴리오 피드백, 커리어 고민 같은 이야기도 편하게 주세요.
-              30분 커피챗도 환영합니다.
+              기술 잡담이나 포트폴리오 피드백, 커리어 고민 같은 이야기도 편하게
+              주세요. 30분 커피챗도 환영합니다.
             </p>
             <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm font-medium">
               <a
