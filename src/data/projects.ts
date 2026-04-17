@@ -28,10 +28,10 @@ export const projects: Project[] = [
     slug: "content-distribution",
     name: "컨텐츠 배포 시스템",
     tagline: "디바이스 사양 기반 콘텐츠 자동 최적화 및 실시간 다운로드 모니터링",
-    period: "2025.08 — 진행중",
+    period: "2025.08 — 2025.10",
     team: "1명 (풀스택)",
     role: "풀스택 개발 및 실시간 다운로드 모니터링 UI 구현",
-    status: "진행중",
+    status: "완료",
     category: "Fullstack",
     tech: [
       "Django",
