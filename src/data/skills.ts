@@ -55,8 +55,8 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     title: "Database",
-    description: "관계형/NoSQL/캐시 레이어를 용도에 맞게 사용합니다.",
-    items: ["MySQL", "MongoDB", "Redis", "SQLite"],
+    description: "관계형/캐시 레이어를 용도에 맞게 사용합니다.",
+    items: ["MySQL", "Redis", "SQLite"],
   },
   {
     title: "Security & Infra",
