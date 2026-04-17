@@ -31,8 +31,8 @@ export function Footer() {
               </span>
             </p>
             <p className="mt-3 text-xs leading-relaxed text-[var(--color-muted)]">
-              React·Next.js 기반 실시간 UI를 다루며 풀스택으로 연결되는 경험을 만듭니다.
-              함께 만들고 싶은 제품이 있다면 언제든 연락 주세요.
+              실시간·인터랙션이 중심이 되는 웹을 좋아하고,
+              필요할 땐 백엔드 끝단까지 직접 다루려 합니다.
             </p>
           </div>
 
