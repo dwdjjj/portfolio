@@ -78,6 +78,14 @@ export function Hero() {
               >
                 github.com/dwdjjj
               </a>
+              <a
+                href={site.blog}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[var(--color-muted)] hover:text-[var(--color-fg)]"
+              >
+                dwdjjj.tistory.com
+              </a>
             </div>
           </div>
         </div>

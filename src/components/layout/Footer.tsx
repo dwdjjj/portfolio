@@ -8,7 +8,7 @@ export function Footer() {
           © {new Date().getFullYear()} {site.shortName}. Built with Next.js
           &amp; deployed on Vercel.
         </p>
-        <div className="flex items-center gap-4">
+        <div className="flex flex-wrap items-center gap-4">
           <a
             href={site.github}
             target="_blank"
@@ -16,6 +16,14 @@ export function Footer() {
             className="hover:text-[var(--color-fg)]"
           >
             GitHub
+          </a>
+          <a
+            href={site.blog}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-[var(--color-fg)]"
+          >
+            Blog
           </a>
           <a href={`mailto:${site.email}`} className="hover:text-[var(--color-fg)]">
             Email
