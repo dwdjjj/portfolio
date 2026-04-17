@@ -7,6 +7,7 @@ import {
   Calendar,
   CircleCheckBig,
   ExternalLink,
+  Images as ImagesIcon,
   ListChecks,
   Sparkles,
   TrendingUp,
@@ -17,6 +18,7 @@ import {
 import { FaGithub } from "react-icons/fa";
 import type { Metadata } from "next";
 import { Badge } from "@/components/ui/Badge";
+import { Slideshow } from "@/components/ui/Slideshow";
 import { projects } from "@/data/projects";
 import { site } from "@/data/site";
 import { gradientFor } from "@/lib/project-gradients";
@@ -76,6 +78,7 @@ export default async function ProjectPage({ params }: Props) {
             fill
             priority
             sizes="(min-width: 768px) 768px, 100vw"
+            unoptimized={project.cover.endsWith(".gif")}
             className="object-cover"
           />
         ) : (
@@ -144,6 +147,21 @@ export default async function ProjectPage({ params }: Props) {
           </div>
         </dl>
       </header>
+
+      {project.images && project.images.length > 0 && (
+        <section className="mt-10">
+          <div className="mb-4 flex items-center gap-2">
+            <ImagesIcon
+              aria-hidden
+              className="h-4 w-4 text-[var(--color-muted)]"
+            />
+            <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--color-fg)]">
+              화면 둘러보기
+            </h2>
+          </div>
+          <Slideshow items={project.images} />
+        </section>
+      )}
 
       <section className="mt-10">
         <div className="mb-3 flex items-center gap-2">

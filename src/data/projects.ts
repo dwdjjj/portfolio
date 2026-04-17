@@ -1,5 +1,10 @@
 export type ProjectCategory = "Web" | "Mobile" | "Infra" | "Fullstack";
 
+export type ProjectImage = {
+  src: string;
+  caption?: string;
+};
+
 export type Project = {
   slug: string;
   name: string;
@@ -10,6 +15,7 @@ export type Project = {
   status?: "진행중" | "완료";
   category?: ProjectCategory;
   cover?: string;
+  images?: ProjectImage[];
   tech: string[];
   highlights: string[];
   results?: string[];
@@ -83,6 +89,15 @@ export const projects: Project[] = [
     role: "Android 앱 개발 및 실시간 채팅 기능 구현",
     status: "완료",
     category: "Mobile",
+    cover: "/images/lets-dog/기획배경2.png",
+    images: [
+      { src: "/images/lets-dog/matching.gif", caption: "반려견 기반 사용자 매칭" },
+      { src: "/images/lets-dog/tracking.gif", caption: "산책 경로 실시간 트래킹" },
+      { src: "/images/lets-dog/board-create.gif", caption: "게시판 글 작성" },
+      { src: "/images/lets-dog/chattingList.gif", caption: "채팅 목록 및 실시간 알림" },
+      { src: "/images/lets-dog/profile-move.gif", caption: "프로필 이동 플로우" },
+      { src: "/images/lets-dog/login.gif", caption: "로그인 / 회원가입" },
+    ],
     tech: ["Kotlin", "Jetpack Compose", "WebSocket", "Stomp"],
     highlights: [
       "Kotlin + Jetpack Compose로 안드로이드 앱 개발",
@@ -102,6 +117,15 @@ export const projects: Project[] = [
     role: "프론트엔드 개발 및 보안 로직 구현",
     status: "완료",
     category: "Web",
+    cover: "/images/maejang-minjok/figma.png",
+    images: [
+      { src: "/images/maejang-minjok/QR.gif", caption: "QR 기반 공유 장바구니" },
+      { src: "/images/maejang-minjok/장바구니.gif", caption: "장바구니 관리" },
+      { src: "/images/maejang-minjok/회원가입.gif", caption: "회원가입 플로우" },
+      { src: "/images/maejang-minjok/결제.gif", caption: "결제 플로우" },
+      { src: "/images/maejang-minjok/사장화면.gif", caption: "사장님 화면 — DnD 주문 상태 변경" },
+      { src: "/images/maejang-minjok/주문알림.gif", caption: "주문 실시간 알림" },
+    ],
     tech: ["React", "Redux", "RSA", "react-beautiful-dnd", "WebSocket", "JWT"],
     highlights: [
       "React 환경 설정 및 Redux 세팅·유지보수",
@@ -122,6 +146,14 @@ export const projects: Project[] = [
     role: "팀장, 실시간 화상 게임 로직 및 UI 구현",
     status: "완료",
     category: "Web",
+    cover: "/images/mung-nyang/메인화면-방생성.gif",
+    images: [
+      { src: "/images/mung-nyang/메인화면-방생성.gif", caption: "메인 화면 — 방 생성" },
+      { src: "/images/mung-nyang/카테고리선택1.gif", caption: "게임 카테고리 선택" },
+      { src: "/images/mung-nyang/대기방화면.gif", caption: "대기방 — OpenVidu 화상 연결" },
+      { src: "/images/mung-nyang/정답자선정화면.gif", caption: "정답자 선정 UI" },
+      { src: "/images/mung-nyang/점수집계.gif", caption: "점수 집계 화면" },
+    ],
     tech: ["React", "Redux", "WebRTC", "OpenVidu"],
     highlights: [
       "Figma 전반적 UI/UX 설계 담당",
