@@ -1,6 +1,7 @@
 import { Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
 import { skillGroups } from "@/data/skills";
+import { SkillIcon } from "@/lib/skill-icons";
 
 export function Skills() {
   return (
@@ -24,9 +25,13 @@ export function Skills() {
                 {g.items.map((item) => (
                   <li
                     key={item}
-                    className="rounded-md border border-[var(--color-border)] bg-[var(--color-bg)] px-2 py-1 text-xs text-[var(--color-muted)]"
+                    className="inline-flex items-center gap-1.5 rounded-md border border-[var(--color-border)] bg-[var(--color-bg)] px-2 py-1 text-xs text-[var(--color-muted)]"
                   >
-                    {item}
+                    <SkillIcon
+                      name={item}
+                      className="h-3.5 w-3.5 shrink-0"
+                    />
+                    <span>{item}</span>
                   </li>
                 ))}
               </ul>

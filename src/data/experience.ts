@@ -9,6 +9,8 @@ export type Experience = {
   company: string;
   role: string;
   period: string;
+  location?: string;
+  tags?: string[];
   current?: boolean;
   summary?: string;
   workItems: WorkItem[];
@@ -20,6 +22,8 @@ export const experience: Experience[] = [
     company: "아자스쿨주식회사",
     role: "개발팀 사원 (프론트엔드)",
     period: "2025.08 — 재직중",
+    location: "서울",
+    tags: ["정규직", "개발팀"],
     current: true,
     summary:
       "교육 플랫폼의 결제·스케줄·푸시·체험단·타임딜 등 핵심 도메인을 React/Next.js로 구축·개선합니다.",
