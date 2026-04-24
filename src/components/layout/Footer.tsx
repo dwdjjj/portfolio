@@ -1,4 +1,5 @@
 import type { ComponentType, SVGProps } from "react";
+import Image from "next/image";
 import { ArrowUp, Mail, Rss } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 import { SiNotion } from "react-icons/si";
@@ -24,12 +25,18 @@ export function Footer() {
       <div className="mx-auto w-full max-w-5xl px-6 py-12 sm:px-8">
         <div className="grid gap-10 sm:grid-cols-5 sm:items-start">
           <div className="sm:col-span-3">
-            <p className="text-base font-semibold tracking-tight text-[var(--color-fg)]">
-              {site.shortName}
-              <span className="ml-2 text-sm font-normal text-[var(--color-muted)]">
+            <div className="flex items-center gap-2 text-[var(--color-fg)]">
+              <Image
+                src="/images/logo/kyj_18.png"
+                alt={site.shortName}
+                width={80}
+                height={40}
+                className="h-7 w-auto object-contain dark:invert"
+              />
+              <span className="text-sm font-normal text-[var(--color-muted)]">
                 · Frontend Developer
               </span>
-            </p>
+            </div>
             <p className="mt-3 max-w-md text-sm leading-relaxed text-[var(--color-muted)]">
               실시간·인터랙션이 중심이 되는 웹을 좋아하고,
               필요할 땐 백엔드 끝단까지 직접 다루려 합니다.
