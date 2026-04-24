@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { navLinks, site } from "@/data/site";
@@ -28,11 +29,19 @@ export function Nav() {
       <div className="mx-auto flex h-16 w-full max-w-5xl items-center justify-between px-6 sm:px-8">
         <Link
           href="/"
-          className="text-sm font-semibold tracking-tight text-[var(--color-fg)]"
+          aria-label={`${site.shortName} — Frontend Developer`}
+          className="inline-flex items-center gap-2 text-[var(--color-fg)]"
         >
-          {site.shortName}
-          <span className="ml-2 text-[var(--color-muted)]">·</span>
-          <span className="ml-2 text-xs font-normal text-[var(--color-muted)]">
+          <Image
+            src="/images/logo/kyj_18.png"
+            alt={site.shortName}
+            width={64}
+            height={32}
+            priority
+            className="h-6 w-auto object-contain dark:invert"
+          />
+          <span className="text-[var(--color-muted)]">·</span>
+          <span className="text-xs font-normal text-[var(--color-muted)]">
             Frontend Developer
           </span>
         </Link>
