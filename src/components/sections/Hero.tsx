@@ -2,13 +2,16 @@ import { profile } from "@/data/profile";
 import { site } from "@/data/site";
 import { Badge } from "@/components/ui/Badge";
 import { Reveal } from "@/components/ui/Reveal";
+import { AboutTerminalBackground } from "@/components/sections/AboutTerminalBackground";
 
 export function Hero() {
   return (
     <section
       id="about"
-      className="relative mx-auto flex min-h-[88vh] w-full max-w-5xl scroll-mt-24 flex-col justify-center px-6 pt-32 pb-20 sm:px-8"
+      className="relative mx-auto flex min-h-[88vh] w-full max-w-5xl scroll-mt-24 flex-col justify-center overflow-hidden px-6 pt-32 pb-20 sm:px-8"
     >
+      <AboutTerminalBackground />
+
       <Reveal>
         <span className="mb-6 inline-flex items-center gap-1.5 rounded-full border border-[var(--color-border)] bg-[var(--color-bg-elevated)] px-3 py-1 text-xs text-[var(--color-muted)]">
           <span className="relative flex h-1.5 w-1.5">
