@@ -1,18 +1,18 @@
 export const profile = {
-  headline: "아이디어를 현실로 구현하는 개발자",
+  headline: "문제를 먼저 보고, 기술로 풀어내는 개발자",
   role: "Frontend Developer",
   status: "Available for work",
   intro: [
-    "React/Next.js 기반 실시간 서비스 개발 경험과",
-    "Spring Boot · Django · Redis · WebSocket을 활용한 백엔드 연동 능력을 보유한 풀스택 개발자입니다.",
+    "React/Next.js 기반 실시간 서비스와 백엔드 연동까지 직접 다루는 풀스택 개발자입니다.",
+    "Claude · Codex · Gemini를 개발 워크플로에 통합해, 더 빠르고 정밀하게 문제를 해결합니다.",
   ],
   philosophy:
-    "사용자 경험을 최우선으로, 데이터 처리 안정성과 UI/UX 직관성을 동시에 달성하는 것을 목표로 합니다.",
+    "기술보다 문제가 먼저입니다. 요구사항의 핵심을 읽어내고, 최적의 방법으로 실현하는 과정을 즐깁니다.",
   focus: [
+    "Problem Solving",
     "Real-time UI",
-    "WebRTC · WebSocket",
     "Next.js · App Router",
-    "Canvas Visualization",
+    "AI-Augmented Dev",
   ],
   algorithm: {
     tier: "Gold I",

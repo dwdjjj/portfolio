@@ -32,6 +32,9 @@ import {
   SiNotion,
   SiMui,
   SiTerraform,
+  SiClaude,
+  SiOpenai,
+  SiGooglegemini,
 } from "react-icons/si";
 import {
   Boxes,
@@ -43,6 +46,7 @@ import {
   MousePointer2,
   Shuffle,
   LineChart,
+  Sparkles,
 } from "lucide-react";
 
 export type IconComponent = ComponentType<SVGProps<SVGSVGElement>>;
@@ -108,6 +112,12 @@ export const SKILL_ICONS: Record<string, IconMeta> = {
   "react-beautiful-dnd": { Icon: MousePointer2, color: "#8B5CF6" },
   Xarrow: { Icon: Shuffle, color: "#0EA5E9" },
   Terraform: { Icon: SiTerraform, color: "#7B42BC" },
+
+  Claude: { Icon: SiClaude, color: "#D97757" },
+  ChatGPT: { Icon: SiOpenai, adaptive: true },
+  Codex: { Icon: SiOpenai, adaptive: true },
+  Gemini: { Icon: SiGooglegemini, color: "#8E75B2" },
+  "Prompt Engineering": { Icon: Sparkles, color: "#F59E0B" },
 };
 
 export const FALLBACK_ICON: IconMeta = { Icon: Layers, adaptive: true };
