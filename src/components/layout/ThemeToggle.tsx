@@ -15,7 +15,13 @@ export function ThemeToggle() {
   return (
     <button
       type="button"
-      aria-label={isDark ? "라이트 모드로 전환" : "다크 모드로 전환"}
+      aria-label={
+        !mounted
+          ? "테마 전환"
+          : isDark
+            ? "라이트 모드로 전환"
+            : "다크 모드로 전환"
+      }
       onClick={() => setTheme(isDark ? "light" : "dark")}
       className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-bg-elevated)] text-[var(--color-fg)] transition-colors hover:bg-[var(--color-accent-soft)]"
     >
