@@ -18,7 +18,7 @@ export function Projects() {
     <Section
       id="projects"
       eyebrow="Projects"
-      title="만든 것들"
+      title="만들어 온 것들"
       description="실서비스부터 사이드까지, 직접 부딪쳐 본 프로젝트입니다."
     >
       <div className="grid gap-5 sm:grid-cols-2">

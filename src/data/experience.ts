@@ -20,7 +20,7 @@ export type Experience = {
 export const experience: Experience[] = [
   {
     company: "아자스쿨주식회사",
-    role: "개발팀 사원 (프론트엔드)",
+    role: "개발팀 사원 (프론트엔드 & IOS/안드로이드)",
     period: "2025.08 — 재직중",
     location: "서울",
     tags: ["정규직", "개발팀"],
@@ -37,10 +37,7 @@ export const experience: Experience[] = [
           "레거시 로직 정리 및 예외 케이스 대응",
           "유저 활동 추적을 위한 GA / Meta Analytics 세팅",
         ],
-        results: [
-          "신규 기능 개발 속도 향상",
-          "운영 대응 효율 개선",
-        ],
+        results: ["신규 기능 개발 속도 향상", "운영 대응 효율 개선"],
       },
       {
         title: "앱푸시 / 웹뷰 고도화",
@@ -53,10 +50,7 @@ export const experience: Experience[] = [
           "푸시 유입 Open 추적 및 실패 큐 재시도 구현",
           "앱 컨텍스트(platform/app_version) URL ↔ 세션 스토리지 동기화",
         ],
-        results: [
-          "푸시 수신·추적 안정성 향상",
-          "앱/웹뷰 환경 분기 오류 감소",
-        ],
+        results: ["푸시 수신·추적 안정성 향상", "앱/웹뷰 환경 분기 오류 감소"],
       },
       {
         title: "강사 스케줄·배정 관리",
