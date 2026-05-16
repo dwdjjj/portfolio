@@ -1,5 +1,5 @@
 export const profile = {
-  headline: "문제를 먼저 보고, 기술로 풀어내는 개발자",
+  headline: ["아이디어를 현실로,", "문제를 성과로 만드는 개발자"],
   role: "Frontend Developer",
   status: "Available for work",
   intro: [

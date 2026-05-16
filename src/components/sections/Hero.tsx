@@ -8,7 +8,7 @@ export function Hero() {
   return (
     <section
       id="about"
-      className="relative mx-auto flex min-h-[88vh] w-full max-w-5xl scroll-mt-24 flex-col justify-center overflow-hidden px-6 pt-32 pb-20 sm:px-8"
+      className="relative isolate mx-auto flex min-h-[88vh] w-full max-w-5xl scroll-mt-24 flex-col justify-center overflow-hidden px-6 pt-32 pb-20 sm:px-8"
     >
       <AboutTerminalBackground />
 
@@ -29,8 +29,12 @@ export function Hero() {
       </Reveal>
 
       <Reveal delay={0.1}>
-        <h1 className="mt-4 text-balance text-5xl font-semibold leading-tight tracking-tight sm:text-7xl">
-          {profile.headline}
+        <h1 className="mt-4 text-5xl font-semibold leading-tight tracking-tight sm:text-7xl">
+          {profile.headline.map((line) => (
+            <span key={line} className="block text-balance break-keep">
+              {line}
+            </span>
+          ))}
         </h1>
       </Reveal>
 
