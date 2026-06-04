@@ -68,45 +68,67 @@ export default async function ProjectPage({ params }: Props) {
         Back to projects
       </Link>
 
-      <div
-        className={`relative mt-6 aspect-[16/9] w-full overflow-hidden rounded-2xl bg-gradient-to-br ${gradient}`}
-      >
-        {project.cover ? (
-          <Image
-            src={project.cover}
-            alt={project.name}
-            fill
-            priority
-            sizes="(min-width: 768px) 768px, 100vw"
-            unoptimized={project.cover.endsWith(".gif")}
-            className="object-cover"
+      {project.cover && project.coverDevice === "mobile" ? (
+        <div
+          className={`relative mt-6 w-full overflow-hidden rounded-2xl bg-gradient-to-br ${gradient} px-6 py-10 sm:px-10 sm:py-12`}
+        >
+          <div
+            aria-hidden
+            className="absolute inset-0 opacity-20 [background-image:linear-gradient(to_right,rgba(255,255,255,0.4)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.4)_1px,transparent_1px)] [background-size:32px_32px]"
           />
-        ) : (
-          <>
-            <div
-              aria-hidden
-              className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.25),transparent_60%)]"
+          <div className="relative mx-auto w-full max-w-[320px] overflow-hidden rounded-[2.2rem] border-[6px] border-white/80 bg-white shadow-2xl ring-1 ring-black/10">
+            <Image
+              src={project.cover}
+              alt={project.name}
+              width={694}
+              height={3204}
+              priority
+              unoptimized={project.cover.endsWith(".gif")}
+              className="h-auto w-full"
             />
-            <div
-              aria-hidden
-              className="absolute inset-0 opacity-20 [background-image:linear-gradient(to_right,rgba(255,255,255,0.4)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.4)_1px,transparent_1px)] [background-size:32px_32px]"
+          </div>
+        </div>
+      ) : (
+        <div
+          className={`relative mt-6 aspect-[16/9] w-full overflow-hidden rounded-2xl bg-gradient-to-br ${gradient}`}
+        >
+          {project.cover ? (
+            <Image
+              src={project.cover}
+              alt={project.name}
+              fill
+              priority
+              sizes="(min-width: 768px) 768px, 100vw"
+              unoptimized={project.cover.endsWith(".gif")}
+              className="object-cover"
             />
-            <div className="absolute inset-0 flex flex-col justify-between p-6 sm:p-8">
-              {project.category && (
-                <span className="inline-flex w-fit items-center rounded-full bg-white/15 px-3 py-1 text-xs font-medium uppercase tracking-[0.18em] text-white backdrop-blur-sm">
-                  {project.category}
-                </span>
-              )}
-              <p
+          ) : (
+            <>
+              <div
                 aria-hidden
-                className="font-display text-3xl font-semibold leading-tight tracking-tight text-white sm:text-5xl"
-              >
-                {project.name}
-              </p>
-            </div>
-          </>
-        )}
-      </div>
+                className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.25),transparent_60%)]"
+              />
+              <div
+                aria-hidden
+                className="absolute inset-0 opacity-20 [background-image:linear-gradient(to_right,rgba(255,255,255,0.4)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.4)_1px,transparent_1px)] [background-size:32px_32px]"
+              />
+              <div className="absolute inset-0 flex flex-col justify-between p-6 sm:p-8">
+                {project.category && (
+                  <span className="inline-flex w-fit items-center rounded-full bg-white/15 px-3 py-1 text-xs font-medium uppercase tracking-[0.18em] text-white backdrop-blur-sm">
+                    {project.category}
+                  </span>
+                )}
+                <p
+                  aria-hidden
+                  className="font-display text-3xl font-semibold leading-tight tracking-tight text-white sm:text-5xl"
+                >
+                  {project.name}
+                </p>
+              </div>
+            </>
+          )}
+        </div>
+      )}
 
       <header className="mt-8">
         <div className="flex flex-wrap items-center gap-2">
