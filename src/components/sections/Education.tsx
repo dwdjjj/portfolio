@@ -39,7 +39,7 @@ export function Education() {
     <Section
       id="education"
       eyebrow="Education"
-      title="배워온 시간과 만들어 본 결과들"
+      title="배움을 쌓아온 시간"
     >
       <div className="grid gap-4">
         {education.map((edu, i) => (
@@ -76,10 +76,7 @@ export function Education() {
       <Reveal delay={0.05}>
         <div className="mt-10 rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] p-6 sm:p-7">
           <div className="mb-5 flex items-center gap-2">
-            <Award
-              aria-hidden
-              className="h-4 w-4 text-[var(--color-accent)]"
-            />
+            <Award aria-hidden className="h-4 w-4 text-[var(--color-accent)]" />
             <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--color-muted)]">
               Certifications & Awards
             </h3>
