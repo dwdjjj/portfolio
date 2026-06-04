@@ -265,7 +265,7 @@ export function AboutTerminalBackground() {
     <canvas
       ref={canvasRef}
       aria-hidden="true"
-      className="pointer-events-none absolute inset-0 h-full w-full opacity-80"
+      className="pointer-events-none absolute inset-0 -z-10 h-full w-full opacity-80"
     />
   );
 }
