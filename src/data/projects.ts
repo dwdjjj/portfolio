@@ -15,6 +15,8 @@ export type Project = {
   status?: "진행중" | "완료";
   category?: ProjectCategory;
   cover?: string;
+  /** "mobile"이면 커버를 그라데이션 위 폰 프레임 안에 세로형으로 노출 (모바일 친화 UI 강조용) */
+  coverDevice?: "mobile";
   images?: ProjectImage[];
   tech: string[];
   highlights: string[];
@@ -24,6 +26,43 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+  {
+    slug: "campus-it",
+    name: "Campus-It (캠퍼스잇)",
+    tagline:
+      "대학생 멘토 1:1 입시·진로 멘토링 커머스 플랫폼 — 기획부터 인프라까지 1인 풀스택 신규 구축",
+    period: "2026.04 — 진행중",
+    team: "1명 (풀스택)",
+    role: "Product Engineer — 기획·정책 설계부터 백엔드·프론트·인프라까지 1인 단독",
+    status: "진행중",
+    category: "Fullstack",
+    cover: "/images/campus-it/home.png",
+    coverDevice: "mobile",
+    tech: [
+      "Java 21",
+      "Spring Boot 3",
+      "PostgreSQL 16",
+      "Next.js 15",
+      "TypeScript",
+      "Redux Toolkit",
+      "React Query",
+      "AWS",
+    ],
+    highlights: [
+      "기획 — PRD 20문서·ADR 17건·약관 14종으로 제품을 먼저 정의하고 코드로 구현 (문서를 단일 진실 공급원으로 운영)",
+      "백엔드 — Spring Boot 도메인 13개·컨트롤러 31개, JWT 인증·카카오/네이버 OAuth·예약 상태 머신·토스페이먼츠 정산 구현 (약 19,500줄)",
+      "프론트엔드 — Next.js 15 페이지 약 70개, 멘티/멘토/관리자 플로우 + Axios 인터셉터 토큰 갱신·React Query 캐시 전략 (약 23,000줄)",
+      "인프라 — AWS EC2(Docker Compose)·RDS·S3+CloudFront 구성, GitHub Actions CI/CD, Redis 대신 PG advisory lock + Caffeine으로 동시성 제어",
+      "출시 전략 — α(파일럿)→β(무료 체험단)→γ(유료 정식) 3단계를 feature flag로 전환, 수수료율·결제 MID 미발급 블로커를 ₩0 체험단 우회 분기로 해결 (ADR-008)",
+    ],
+    results: [
+      "총 657 커밋(단독)·약 3.5주 — 백엔드 약 19,500줄 + 프론트엔드 약 23,000줄",
+      "β 체험단 출시(2026.05)·γ 유료 정식(2026.06) 로드맵 진행 중",
+    ],
+    growth:
+      "기존 프론트엔드 유지보수를 넘어 기획·정책 설계부터 출시 전략까지 제품 전체를 단독 책임 — 구현 난이도가 아닌 제품·비즈니스 제약 기준의 의사결정 역량 확보",
+    links: [{ label: "mentoring.ajaschool.com", href: "https://mentoring.ajaschool.com" }],
+  },
   {
     slug: "content-distribution",
     name: "컨텐츠 배포 시스템",
@@ -48,13 +87,11 @@ export const projects: Project[] = [
       "Celery + Redis 기반 콘텐츠 변환 자동화 및 동시 다운로드 큐 관리",
       "다운로드 실패 시 대체 콘텐츠 제공(fallback) 전략 구현",
       "WebSocket 기반 실시간 다운로드 진행률 전송 + Next.js 대시보드 구현",
-      "React + Tailwind 기반 콘텐츠 업로드 및 실시간 다운로드 UI",
     ],
     results: [
       "디바이스 사양 기반 콘텐츠 자동 최적화로 사용자 맞춤 제공 가능",
       "변환 자동화 + fallback 전략으로 안정성 확보",
       "React 훅 기반 WebSocket 연결로 실시간 대시보드 반응성 향상",
-      "전 구간 모듈화·상태 분리로 코드 재사용성 확보",
     ],
   },
   {
@@ -162,7 +199,6 @@ export const projects: Project[] = [
       "Redux 기반 로그인·방 정보 전역 상태 관리",
       "채팅방, 도움말/투표/정답 모달 컴포넌트 설계 및 구현",
       "OpenVidu 화상 통화 + Signal 통신 기반 게임 진행 로직 안정화",
-      "벌칙자 선정 후 벌칙 화면 설계 및 패스 로직 구현",
     ],
     growth:
       "팀장으로 팀 전체 일정·역할 분배 + 실시간 게임 로직 설계 경험",

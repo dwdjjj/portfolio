@@ -33,7 +33,26 @@ export function Projects() {
                 <div
                   className={`relative aspect-[16/9] w-full overflow-hidden bg-gradient-to-br ${gradient}`}
                 >
-                  {p.cover ? (
+                  {p.cover && p.coverDevice === "mobile" ? (
+                    <>
+                      <div
+                        aria-hidden
+                        className="absolute inset-0 opacity-20 [background-image:linear-gradient(to_right,rgba(255,255,255,0.4)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.4)_1px,transparent_1px)] [background-size:24px_24px]"
+                      />
+                      <div className="absolute inset-x-0 top-5 bottom-0 flex justify-center">
+                        <div className="relative aspect-[9/19.5] h-[150%] overflow-hidden rounded-[1.4rem] border-[3px] border-white/70 bg-white shadow-2xl ring-1 ring-black/10 transition-transform duration-500 group-hover:-translate-y-1">
+                          <Image
+                            src={p.cover}
+                            alt={p.name}
+                            fill
+                            sizes="(min-width: 640px) 25vw, 50vw"
+                            unoptimized={p.cover.endsWith(".gif")}
+                            className="object-cover object-top"
+                          />
+                        </div>
+                      </div>
+                    </>
+                  ) : p.cover ? (
                     <Image
                       src={p.cover}
                       alt={p.name}

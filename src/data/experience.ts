@@ -20,14 +20,26 @@ export type Experience = {
 export const experience: Experience[] = [
   {
     company: "아자스쿨주식회사",
-    role: "개발팀 사원 (프론트엔드)",
+    role: "개발팀 사원 (프론트엔드 & iOS/Android)",
     period: "2025.08 — 재직중",
     location: "서울",
     tags: ["정규직", "개발팀"],
     current: true,
     summary:
-      "교육 플랫폼의 결제·스케줄·푸시·체험단·타임딜 등 핵심 도메인을 React/Next.js로 구축·개선합니다.",
+      "교육 플랫폼의 결제·스케줄·푸시·체험단·타임딜 등 핵심 도메인을 React/Next.js로 구축·개선하고, 신규 온라인 멘토링 플랫폼을 기획부터 풀스택으로 단독 구축했습니다.",
     workItems: [
+      {
+        title: "온라인 멘토링 플랫폼 'Campus-It(캠퍼스잇)' 신규 구축",
+        period: "2026.04 — 진행중",
+        bullets: [
+          "대학생 멘토 1:1 입시·진로 멘토링 신사업을 기획·정책 설계부터 단독 구축 (Product Engineer)",
+          "Spring Boot 백엔드 · Next.js 15 프론트엔드 · AWS 인프라까지 1인 풀스택 개발",
+          "α→β→γ 3단계 출시 전략과 feature flag 기반 ₩0 체험단 우회 분기 설계",
+        ],
+        results: [
+          "프론트엔드 유지보수를 넘어 풀스택·제품 단위 책임으로 역할 확장",
+        ],
+      },
       {
         title: "플랫폼 유지보수 및 개선",
         period: "2025.08 — 2026.03",
@@ -113,6 +125,9 @@ export const experience: Experience[] = [
       "WebView Bridge",
       "FCM",
       "GA / Meta Analytics",
+      "Java / Spring Boot",
+      "PostgreSQL",
+      "AWS",
     ],
   },
 ];
