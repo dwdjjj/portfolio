@@ -36,7 +36,7 @@ export const projects: Project[] = [
     role: "Product Engineer — 기획·정책 설계부터 백엔드·프론트·인프라까지 1인 단독",
     status: "진행중",
     category: "Fullstack",
-    cover: "/images/campus-it/home.png",
+    cover: "/images/campus-it/home-blurred-v2.png",
     coverDevice: "mobile",
     tech: [
       "Java 21",
@@ -49,18 +49,20 @@ export const projects: Project[] = [
       "AWS",
     ],
     highlights: [
-      "기획 — PRD 20문서·ADR 17건·약관 14종으로 제품을 먼저 정의하고 코드로 구현 (문서를 단일 진실 공급원으로 운영)",
-      "백엔드 — Spring Boot 도메인 13개·컨트롤러 31개, JWT 인증·카카오/네이버 OAuth·예약 상태 머신·토스페이먼츠 정산 구현 (약 19,500줄)",
-      "프론트엔드 — Next.js 15 페이지 약 70개, 멘티/멘토/관리자 플로우 + Axios 인터셉터 토큰 갱신·React Query 캐시 전략 (약 23,000줄)",
-      "인프라 — AWS EC2(Docker Compose)·RDS·S3+CloudFront 구성, GitHub Actions CI/CD, Redis 대신 PG advisory lock + Caffeine으로 동시성 제어",
-      "출시 전략 — α(파일럿)→β(무료 체험단)→γ(유료 정식) 3단계를 feature flag로 전환, 수수료율·결제 MID 미발급 블로커를 ₩0 체험단 우회 분기로 해결 (ADR-008)",
+      "기획 — PRD 20개·ADR 17건·약관 14종을 정리해 예약 상태, 취소/환불, 멘토 승인, 약관 동의, 결제 전환 기준을 먼저 정의",
+      "백엔드 — Spring Boot 기반 회원·인증·멘토·상품·예약·결제·정산·관리자 등 핵심 도메인 API 구현",
+      "프론트엔드 — Next.js 기반 멘티·멘토·관리자 플로우와 약 70개 페이지 개발, Axios 인터셉터 토큰 갱신·React Query 캐시 전략 적용",
+      "핵심 기능 — JWT 인증, 카카오/네이버 OAuth, 예약 상태 머신, 상담 입장 기록, 취소/환불 정책, 토스페이먼츠 결제·정산 흐름 구현",
+      "인프라 — AWS EC2, Docker Compose, RDS, S3, CloudFront, GitHub Actions 기반 배포 환경 구성",
+      "출시 전략 — α 파일럿, β 무료 체험단, γ 유료 정식 출시 단계로 분리하고 feature flag로 무료 주문·유료 결제 전환 구조 설계",
+      "동시성 제어 — Redis 없이 PostgreSQL advisory lock과 Caffeine을 활용해 예약 중복 생성 방지",
     ],
     results: [
-      "총 657 커밋(단독)·약 3.5주 — 백엔드 약 19,500줄 + 프론트엔드 약 23,000줄",
-      "β 체험단 출시(2026.05)·γ 유료 정식(2026.06) 로드맵 진행 중",
+      "단독 개발 기준 657개 커밋, 백엔드 약 19,500줄·프론트엔드 약 23,000줄 구현",
+      "2026년 5월 β 무료 체험단 출시 기준으로 개발을 진행하고 6월 γ 유료 정식 출시 로드맵까지 설계",
     ],
     growth:
-      "기존 프론트엔드 유지보수를 넘어 기획·정책 설계부터 출시 전략까지 제품 전체를 단독 책임 — 구현 난이도가 아닌 제품·비즈니스 제약 기준의 의사결정 역량 확보",
+      "기존 프론트엔드 유지보수를 넘어 기획·정책 설계부터 개발·배포·출시 전략까지 제품 전체를 단독 책임지며, 구현 난이도뿐 아니라 운영 정책과 비즈니스 제약을 기준으로 의사결정하는 경험을 쌓았습니다.",
     links: [{ label: "mentoring.ajaschool.com", href: "https://mentoring.ajaschool.com" }],
   },
   {
