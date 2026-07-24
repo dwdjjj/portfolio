@@ -1,4 +1,4 @@
-import { ArrowRight, Mail, Phone } from "lucide-react";
+import { ArrowRight, Mail, Rss } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 import { Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
@@ -72,11 +72,17 @@ export function Contact() {
                 />
               </a>
               <a
-                href={`tel:${site.phone.replace(/-/g, "")}`}
-                className="inline-flex items-center gap-2 text-[var(--color-muted)] hover:text-[var(--color-fg)]"
+                href={site.blog}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-2 text-[var(--color-muted)] hover:text-[var(--color-fg)]"
               >
-                <Phone aria-hidden className="h-4 w-4" />
-                {site.phone}
+                <Rss aria-hidden className="h-4 w-4" />
+                Blog
+                <ArrowRight
+                  aria-hidden
+                  className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
+                />
               </a>
             </div>
           </div>
