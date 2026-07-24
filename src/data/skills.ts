@@ -13,10 +13,10 @@ export const skillGroups: SkillGroup[] = [
       "Next.js",
       "TypeScript",
       "Redux",
+      "React Query",
       "Zustand",
       "TailwindCSS",
       "Vue.js",
-      "Chart.js",
       "D3.js",
     ],
   },
@@ -33,14 +33,13 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     title: "Backend",
-    description: "FE 옆에서 직접 API를 설계하고 데이터 흐름을 제어합니다.",
+    description: "화면에서 끝내지 않고 API와 데이터 흐름까지 직접 설계합니다.",
     items: [
-      "Node.js",
       "Spring Boot",
       "Django",
       "Celery",
+      "Node.js",
       "Next.js API Routes",
-      "Prisma",
     ],
   },
   {
@@ -56,16 +55,26 @@ export const skillGroups: SkillGroup[] = [
   {
     title: "Database",
     description: "관계형/캐시 레이어를 용도에 맞게 선택하고 운용합니다.",
-    items: ["MySQL", "Redis", "SQLite"],
+    items: ["PostgreSQL", "MySQL", "Redis", "SQLite"],
   },
   {
     title: "Security & Infra",
-    description: "안전한 통신과 재현 가능한 빌드 환경을 구성합니다.",
-    items: ["JWT", "RSA", "Docker", "Webpack"],
+    description:
+      "인증·통신 보안부터 배포까지, 서비스가 실제로 떠 있는 환경을 직접 구성하고 운영합니다.",
+    items: [
+      "JWT",
+      "RSA",
+      "Docker",
+      "AWS (EC2 · RDS · S3 · CloudFront)",
+      "GitHub Actions",
+      "Nginx",
+      "Webpack",
+    ],
   },
   {
-    title: "AI & Problem Solving",
-    description: "Claude · Codex · Gemini를 개발 워크플로에 통합해 문제 해결 속도를 높입니다.",
+    title: "AI 활용",
+    description:
+      "AI를 답 생성기가 아니라 검토자이자 리서처로 씁니다. 설계 전 놓친 조건을 되묻게 하고, 낯선 기술 스택과 도메인·법령 자료를 파악하는 속도를 높입니다.",
     items: ["Claude", "Codex", "ChatGPT", "Gemini", "Prompt Engineering"],
   },
   {
