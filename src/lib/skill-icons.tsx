@@ -35,9 +35,14 @@ import {
   SiClaude,
   SiOpenai,
   SiGooglegemini,
+  SiPostgresql,
+  SiReactquery,
+  SiNginx,
+  SiGithubactions,
 } from "react-icons/si";
 import {
   Boxes,
+  Cloud,
   Key,
   Layers,
   PencilRuler,
@@ -92,6 +97,11 @@ export const SKILL_ICONS: Record<string, IconMeta> = {
   "WebView Bridge": { Icon: Waypoints, color: "#0EA5E9" },
   FCM: { Icon: SiFirebase, color: "#FFCA28" },
 
+  "React Query": { Icon: SiReactquery, color: "#FF4154" },
+  "Redux Toolkit": { Icon: SiRedux, color: "#764ABC" },
+
+  PostgreSQL: { Icon: SiPostgresql, color: "#4169E1" },
+  "PostgreSQL 16": { Icon: SiPostgresql, color: "#4169E1" },
   MySQL: { Icon: SiMysql, color: "#4479A1" },
   MongoDB: { Icon: SiMongodb, color: "#47A248" },
   Redis: { Icon: SiRedis, color: "#DC382D" },
@@ -101,6 +111,12 @@ export const SKILL_ICONS: Record<string, IconMeta> = {
   RSA: { Icon: Key, color: "#EAB308" },
   Docker: { Icon: SiDocker, color: "#2496ED" },
   Webpack: { Icon: SiWebpack, color: "#8DD6F9" },
+  AWS: { Icon: Cloud, color: "#FF9900" },
+  "AWS (EC2 · RDS · S3 · CloudFront)": { Icon: Cloud, color: "#FF9900" },
+  Nginx: { Icon: SiNginx, color: "#009639" },
+  "GitHub Actions": { Icon: SiGithubactions, color: "#2088FF" },
+  "Spring Boot 3": { Icon: SiSpringboot, color: "#6DB33F" },
+  "Java / Spring Boot": { Icon: SiSpringboot, color: "#6DB33F" },
 
   Git: { Icon: SiGit, color: "#F05032" },
   GitHub: { Icon: SiGithub, adaptive: true },

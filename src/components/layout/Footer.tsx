@@ -39,7 +39,7 @@ export function Footer() {
             </div>
             <p className="mt-3 max-w-md text-sm leading-relaxed text-[var(--color-muted)]">
               실시간·인터랙션이 중심이 되는 웹을 좋아하고,
-              필요할 땐 백엔드 끝단까지 직접 다루려 합니다.
+              필요할 땐 백엔드 끝단까지 직접 다룹니다.
             </p>
           </div>
 
