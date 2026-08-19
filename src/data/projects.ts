@@ -122,6 +122,21 @@ export const projects: Project[] = [
     role: "단독 — 기획·개발·인프라·운영 문서",
     status: "완료",
     category: "Web",
+    cover: "/images/pyeongtaek-career/home.png",
+    images: [
+      {
+        src: "/images/pyeongtaek-career/program.png",
+        caption: "전체 프로그램 — 학년군별 회차 일정과 직업군",
+      },
+      {
+        src: "/images/pyeongtaek-career/participants.png",
+        caption: "참가자 선정 결과 — 회차별 선정자·대기자 안내",
+      },
+      {
+        src: "/images/pyeongtaek-career/qna.png",
+        caption: "자주 묻는 질문 — 신청 절차·취소 규정",
+      },
+    ],
     tech: ["Next.js", "TypeScript", "Supabase", "Vercel", "sharp", "zod"],
     highlights: [
       "충돌하는 요건 정리 — 학부모의 회차별 명단 조회(DB 필요) · 비개발자 운영자의 셀프 등록 · 운영비 0 · 배포 데드라인",
