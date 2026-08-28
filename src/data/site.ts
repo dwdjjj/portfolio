@@ -3,7 +3,7 @@ export const site = {
   shortName: "권영재",
   title: "권영재 — 아이디어를 현실로 구현하는 개발자",
   description:
-    "Next.js 프론트엔드부터 Spring Boot 백엔드·AWS 인프라까지, 온라인 멘토링 플랫폼을 기획부터 1인으로 구축해 출시한 개발자 권영재의 포트폴리오입니다.",
+    "프론트엔드로 시작해 백엔드와 인프라까지 직접 다루며 서비스를 출시해 온 개발자 권영재의 포트폴리오입니다.",
   url: "https://young-jae.com",
   email: "dwdjjj@naver.com",
   github: "https://github.com/dwdjjj",
