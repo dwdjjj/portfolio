@@ -19,7 +19,7 @@ export function Projects() {
       id="projects"
       eyebrow="Projects"
       title="만들어 온 것들"
-      description="실서비스부터 사이드까지, 직접 부딪쳐 본 프로젝트입니다."
+      description="출시한 서비스와 직접 구현해 본 프로젝트를 모았습니다."
     >
       <div className="grid gap-5 sm:grid-cols-2">
         {projects.map((p, i) => {

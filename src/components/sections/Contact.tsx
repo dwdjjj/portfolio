@@ -17,7 +17,7 @@ export function Contact() {
             </span>
             답장 가능
           </span>
-          <span>함께 만들 제품을 기다리고 있습니다.</span>
+          <span>새로운 제품과 문제를 함께 다룰 기회를 찾고 있습니다.</span>
         </div>
 
         <a

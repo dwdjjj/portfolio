@@ -23,8 +23,8 @@ export function Experience() {
     <Section
       id="experience"
       eyebrow="Experience"
-      title="제품과 함께 거쳐온 일과 시간"
-      description="실서비스에서 만든 결과물과 그 과정의 의사결정을 정리했습니다."
+      title="지금까지 해온 일"
+      description="실제 서비스에서 맡았던 일과 그 결과를 정리했습니다."
     >
       <div className="relative">
         <div
