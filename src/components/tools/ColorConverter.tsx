@@ -11,7 +11,7 @@ import {
   type Rgba,
 } from "@/lib/color";
 import { ColorField, useColorInput } from "./ColorField";
-import { card, smallButton } from "./styles";
+import { card, smallButton } from "./shared";
 
 const FORMATS: [label: string, format: (c: Rgba) => string][] = [
   ["HEX", toHex],

@@ -4,11 +4,14 @@ import { useEffect, useRef, useState } from "react";
 import { Check, Copy } from "lucide-react";
 import { cn } from "@/lib/cn";
 
-// JwtDecoder와 같은 카드·버튼 모양. 새 도구는 여기서 가져다 쓴다.
+// 도구 화면 공통 카드·버튼·입력칸 모양과 복사 버튼.
 export const card =
   "rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] p-5";
 export const smallButton =
   "inline-flex items-center gap-1.5 rounded-full border border-[var(--color-border)] px-3 py-1.5 text-xs font-medium text-[var(--color-muted)] transition-colors hover:border-[var(--color-accent)]/40 hover:text-[var(--color-accent)] disabled:pointer-events-none disabled:opacity-50";
+
+export const textField =
+  "block w-full rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] font-mono text-sm text-[var(--color-fg)] placeholder:text-[var(--color-subtle)] focus:border-[var(--color-accent)]/60 focus:outline-none";
 
 /** 여러 값 중 하나를 고르는 버튼. 선택된 쪽은 강조색. */
 export function toggleButton(active: boolean) {

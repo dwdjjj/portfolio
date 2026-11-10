@@ -1,9 +1,10 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
-import { AlertTriangle, Check, Copy, ShieldCheck } from "lucide-react";
+import { useEffect, useMemo, useState } from "react";
+import { AlertTriangle, ShieldCheck } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
 import { cn } from "@/lib/cn";
+import { CopyButton, card, smallButton } from "./shared";
 import {
   PART_LABEL,
   TIME_CLAIMS,
@@ -23,11 +24,6 @@ const CLAIM_LABEL: Record<TimeClaim, string> = {
   iat: "발급",
   nbf: "사용 시작",
 };
-
-const card =
-  "rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] p-5";
-const smallButton =
-  "inline-flex items-center gap-1.5 rounded-full border border-[var(--color-border)] px-3 py-1.5 text-xs font-medium text-[var(--color-muted)] transition-colors hover:border-[var(--color-accent)]/40 hover:text-[var(--color-accent)] disabled:pointer-events-none disabled:opacity-50";
 
 export function JwtDecoder() {
   // 토큰은 이 state에만 있다. 저장소·URL·네트워크로 내보내지 않는다.
@@ -213,41 +209,12 @@ function StatusBadge({ status }: { status: TokenStatus }) {
 
 function JsonBlock({ title, value }: { title: string; value: unknown }) {
   const text = JSON.stringify(value, null, 2);
-  const [copy, setCopy] = useState<"idle" | "done" | "failed">("idle");
-  const timer = useRef<ReturnType<typeof setTimeout>>(undefined);
-
-  useEffect(() => () => clearTimeout(timer.current), []);
-
-  async function onCopy() {
-    try {
-      await navigator.clipboard.writeText(text);
-      setCopy("done");
-    } catch {
-      setCopy("failed");
-    }
-    clearTimeout(timer.current);
-    timer.current = setTimeout(() => setCopy("idle"), 1500);
-  }
 
   return (
     <div className={card}>
       <div className="flex items-center justify-between gap-3">
         <h2 className="text-sm font-semibold">{title}</h2>
-        <button
-          type="button"
-          onClick={onCopy}
-          className={smallButton}
-          aria-label={`${title} JSON 복사`}
-        >
-          {copy === "done" ? (
-            <Check aria-hidden className="h-3.5 w-3.5" />
-          ) : (
-            <Copy aria-hidden className="h-3.5 w-3.5" />
-          )}
-          <span aria-live="polite">
-            {copy === "done" ? "복사됨" : copy === "failed" ? "복사 실패" : "복사"}
-          </span>
-        </button>
+        <CopyButton value={text} label={`${title} JSON 복사`} />
       </div>
       <pre className="mt-3 font-mono text-xs leading-relaxed whitespace-pre-wrap wrap-anywhere text-[var(--color-fg)] sm:text-sm">
         {text}

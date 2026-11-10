@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 import { ShieldCheck } from "lucide-react";
 import { cn } from "@/lib/cn";
 import { countText, type TextStats } from "@/lib/text-count";
-import { card, smallButton, textField } from "./styles";
+import { card, smallButton, textField } from "./shared";
 
 const STATS: { key: keyof TextStats; label: string; unit: string }[] = [
   { key: "chars", label: "공백 포함", unit: "자" },

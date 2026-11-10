@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/Badge";
 import { cn } from "@/lib/cn";
 import { WCAG_LEVELS, contrastRatio, toHex } from "@/lib/color";
 import { ColorField, useColorInput } from "./ColorField";
-import { card, smallButton } from "./styles";
+import { card, smallButton } from "./shared";
 
 export function ContrastChecker() {
   const fg = useColorInput("#ffffff");

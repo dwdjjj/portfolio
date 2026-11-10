@@ -4,7 +4,7 @@ import { useState, type ReactNode } from "react";
 import { AlertTriangle } from "lucide-react";
 import { cn } from "@/lib/cn";
 import { parseColor, toHex6, type ParseResult } from "@/lib/color";
-import { card, textField } from "./styles";
+import { card, textField } from "./shared";
 
 export type ColorInput = {
   text: string;
