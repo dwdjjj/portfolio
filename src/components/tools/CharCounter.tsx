@@ -1,7 +1,6 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { ShieldCheck } from "lucide-react";
 import { cn } from "@/lib/cn";
 import { countText, type TextStats } from "@/lib/text-count";
 import { card, smallButton, textField } from "./shared";
@@ -36,11 +35,6 @@ export function CharCounter() {
 
   return (
     <div className="space-y-6">
-      <div className={cn(card, "flex gap-3 text-sm text-[var(--color-muted)]")}>
-        <ShieldCheck aria-hidden className="mt-0.5 h-5 w-5 shrink-0 text-[var(--color-accent)]" />
-        <p>입력한 내용은 서버로 보내지 않고 저장하지도 않습니다.</p>
-      </div>
-
       <div>
         <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
           <label htmlFor="count-input" className="text-sm font-semibold">

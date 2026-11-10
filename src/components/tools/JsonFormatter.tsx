@@ -1,7 +1,7 @@
 "use client";
 
 import { useDeferredValue, useMemo, useState } from "react";
-import { AlertTriangle, ShieldCheck } from "lucide-react";
+import { AlertTriangle, Info } from "lucide-react";
 import { cn } from "@/lib/cn";
 import {
   describeRoot,
@@ -49,14 +49,11 @@ export function JsonFormatter() {
   return (
     <div className="space-y-6">
       <div className={cn(card, "flex gap-3 text-sm text-[var(--color-muted)]")}>
-        <ShieldCheck
+        <Info
           aria-hidden
           className="mt-0.5 h-5 w-5 shrink-0 text-[var(--color-accent)]"
         />
         <div className="space-y-1.5">
-          <p>
-            입력한 내용은 서버로 보내지 않고 저장하지도 않습니다.
-          </p>
           <p>
             <strong className="font-semibold text-[var(--color-fg)]">
               큰 숫자도 그대로 둡니다.

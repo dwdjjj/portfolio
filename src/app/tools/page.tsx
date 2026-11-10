@@ -5,9 +5,12 @@ import { Section } from "@/components/ui/Section";
 import { Badge } from "@/components/ui/Badge";
 import { tools } from "@/data/tools";
 
+const intro =
+  "일하다 자주 찾게 되는 도구를 직접 만들어 모았습니다. 입력한 값은 서버로 가지 않고 이 브라우저 안에서만 처리됩니다.";
+
 export const metadata: Metadata = {
   title: "Tools",
-  description: "개발하다 필요해서 만든 도구들. 입력한 값은 브라우저 밖으로 나가지 않습니다.",
+  description: intro,
 };
 
 export default function ToolsPage() {
@@ -17,8 +20,7 @@ export default function ToolsPage() {
         Tools
       </h1>
       <p className="mt-3 text-sm text-[var(--color-muted)] sm:text-base">
-        개발하다 필요해서 만든 도구를 모아 둡니다. 입력한 값은 브라우저 밖으로
-        나가지 않습니다.
+        {intro}
       </p>
 
       <ul className="mt-10 grid gap-5 sm:grid-cols-2">
