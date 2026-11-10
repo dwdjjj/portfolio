@@ -4,10 +4,12 @@ import { ArrowLeft } from "lucide-react";
 import { Section } from "@/components/ui/Section";
 import { CharCounter } from "@/components/tools/CharCounter";
 
+const intro =
+  "글을 붙여넣으면 공백 포함·제외 글자 수와 바이트 수가 바로 나옵니다. 자소서 양식에서 쓰는 한글 2바이트 기준도 같이 셉니다.";
+
 export const metadata: Metadata = {
   title: "글자 수 세기",
-  description:
-    "공백 포함·제외 글자 수, 단어·줄 수, UTF-8과 한글 2바이트 기준 바이트 수를 세는 도구. 글을 서버로 보내지 않습니다.",
+  description: intro,
 };
 
 export default function CountToolPage() {
@@ -24,8 +26,7 @@ export default function CountToolPage() {
         글자 수 세기
       </h1>
       <p className="mt-3 text-sm text-[var(--color-muted)] sm:text-base">
-        글을 붙여넣으면 공백 포함·제외 글자 수와 바이트 수를 바로 셉니다. 자기소개서
-        양식에서 쓰는 한글 2바이트 기준도 함께 보여 줍니다.
+        {intro}
       </p>
       <div className="mt-10">
         <CharCounter />

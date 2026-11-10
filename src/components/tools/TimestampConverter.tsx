@@ -62,17 +62,12 @@ export function TimestampConverter() {
         />
         <div className="space-y-1.5">
           <p>
-            <strong className="font-semibold text-[var(--color-fg)]">
-              초·밀리초는 크기로 판별합니다.
-            </strong>{" "}
-            절댓값이 1000억 이상이면 밀리초, 미만이면 초로 봅니다. 1973년
-            이전의 밀리초 값은 직접 고르세요.
+            1000억 이상이면 밀리초, 그보다 작으면 초로 읽습니다. 1973년 이전
+            밀리초 값은 직접 골라 주세요.
           </p>
           <p>
-            <strong className="font-semibold text-[var(--color-fg)]">
-              한국 시간은 Asia/Seoul 시간대 규칙을 따릅니다.
-            </strong>{" "}
-            1988년 서머타임처럼 +09:00이 아니던 시기는 그때의 오프셋으로 나옵니다.
+            서머타임을 하던 1987·88년 같은 시기는 +09:00이 아니라 +10:00으로
+            나옵니다. 그때의 실제 한국 시간을 따르기 때문입니다.
           </p>
         </div>
       </div>

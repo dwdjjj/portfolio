@@ -38,13 +38,7 @@ export function CharCounter() {
     <div className="space-y-6">
       <div className={cn(card, "flex gap-3 text-sm text-[var(--color-muted)]")}>
         <ShieldCheck aria-hidden className="mt-0.5 h-5 w-5 shrink-0 text-[var(--color-accent)]" />
-        <p>
-          <strong className="font-semibold text-[var(--color-fg)]">
-            글은 이 브라우저 안에서만 셉니다.
-          </strong>{" "}
-          서버로 보내지 않고 어디에도 저장하지 않습니다. 새로고침하거나 페이지를
-          떠나면 사라집니다.
-        </p>
+        <p>입력한 내용은 서버로 보내지 않고 저장하지도 않습니다.</p>
       </div>
 
       <div>
@@ -169,7 +163,7 @@ export function CharCounter() {
             글자: 이모지(👍🏽, 👨‍👩‍👧)와 결합 문자도 눈에 보이는 한 글자로 셉니다. 줄바꿈은
             공백 포함에서 1자, 공백 제외에서는 0자입니다.
           </li>
-          <li>단어: 공백·줄바꿈으로 나뉜 덩어리 수입니다.</li>
+          <li>단어: 띄어쓰기·줄바꿈으로 나눈 개수</li>
           <li>
             UTF-8: 입력 그대로의 바이트 수입니다. 영문·숫자 1, 한글 3, 이모지는 4
             이상, 줄바꿈 1바이트.

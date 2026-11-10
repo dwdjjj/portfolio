@@ -11,13 +11,13 @@ export const tools: {
   {
     href: "/tools/json",
     title: "JSON 포매터",
-    description: "뭉친 JSON을 들여쓰기해 정리하고, 문법 오류 위치를 줄·칸으로 보여 줍니다.",
+    description: "JSON 텍스트를 정렬합니다. 문법 오류 혹은 괄호가 잘못된 경우 표시해 줍니다.",
     Icon: Braces,
   },
   {
     href: "/tools/jwt",
     title: "JWT 디코더",
-    description: "토큰의 헤더·페이로드와 만료 시각을 한국 시간으로 확인합니다.",
+    description: "JWT 토큰을 디코딩해 보세요! 숨겨진 값들을 확인할 수 있습니다.",
     Icon: KeyRound,
   },
   {
@@ -29,13 +29,13 @@ export const tools: {
   {
     href: "/tools/color",
     title: "색상 변환기",
-    description: "HEX·RGB·HSL·OKLCH를 서로 바꾸고 명암 대비를 WCAG 기준으로 검사합니다.",
+    description: "HEX·RGB·HSL·OKLCH를 오가며 바꾸고, 글자색과 배경색 대비가 WCAG 기준을 넘는지 봅니다.",
     Icon: Palette,
   },
   {
     href: "/tools/count",
     title: "글자 수 세기",
-    description: "공백 포함·제외 글자 수와 한글 2바이트 기준 바이트 수를 셉니다.",
+    description: "자소서 글자 수를 공백 포함·제외로 세고, 한글 2바이트 기준 바이트도 함께 셉니다.",
     Icon: CaseSensitive,
   },
 ];

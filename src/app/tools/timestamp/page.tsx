@@ -4,10 +4,12 @@ import { ArrowLeft } from "lucide-react";
 import { Section } from "@/components/ui/Section";
 import { TimestampConverter } from "@/components/tools/TimestampConverter";
 
+const intro =
+  "로그나 DB에서 본 타임스탬프를 붙여넣으면 한국 시간·UTC·ISO 8601로 바꿉니다. 날짜를 넣으면 거꾸로 초·밀리초 값이 나옵니다.";
+
 export const metadata: Metadata = {
   title: "타임스탬프 변환기",
-  description:
-    "유닉스 타임스탬프(초·밀리초)를 한국 시간·UTC·ISO 8601로, 한국 시간을 타임스탬프로 바꾸는 변환기.",
+  description: intro,
 };
 
 export default function TimestampToolPage() {
@@ -24,8 +26,7 @@ export default function TimestampToolPage() {
         타임스탬프 변환기
       </h1>
       <p className="mt-3 text-sm text-[var(--color-muted)] sm:text-base">
-        유닉스 타임스탬프를 한국 시간·UTC·ISO 8601로 바꾸고, 반대로 한국 시간을
-        초·밀리초 타임스탬프로 바꿉니다.
+        {intro}
       </p>
       <div className="mt-10">
         <TimestampConverter />

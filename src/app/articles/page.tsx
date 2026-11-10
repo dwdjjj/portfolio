@@ -10,7 +10,7 @@ import { getArticles } from "@/lib/feeds";
 // 값은 정적 분석되어야 하므로 리터럴로 둔다.
 export const revalidate = 10800;
 
-const description = `국내외 기술 블로그 ${FEEDS.length}곳의 새 글을 분야별로 나눠 3시간마다 갱신합니다.`;
+const description = `제가 챙겨 보는 기술 블로그 ${FEEDS.length}곳의 새 글을 분야별로 모았습니다.`;
 
 export const metadata: Metadata = {
   title: "Articles",

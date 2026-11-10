@@ -241,7 +241,7 @@ export function parseColor(input: string): ParseResult {
   if (!fn) {
     return {
       ok: false,
-      message: "HEX(#0d9488), rgb(), hsl(), oklch() 형식만 읽습니다.",
+      message: "읽을 수 있는 형식: HEX(#0d9488), rgb(), hsl(), oklch()",
     };
   }
   try {

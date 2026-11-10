@@ -4,10 +4,12 @@ import { ArrowLeft } from "lucide-react";
 import { Section } from "@/components/ui/Section";
 import { JsonFormatter } from "@/components/tools/JsonFormatter";
 
+const intro =
+  "읽기 힘든 JSON 텍스트 형식을 보기 좋게 정리해 줍니다. 문법이 틀린 부분도 손쉽게 확인이 가능합니다.";
+
 export const metadata: Metadata = {
   title: "JSON 포매터",
-  description:
-    "뭉친 JSON을 들여쓰기해 정리하고, 문법 오류는 줄·칸 위치로 보여 주는 포매터. 입력을 서버로 보내지 않습니다.",
+  description: intro,
 };
 
 export default function JsonToolPage() {
@@ -24,8 +26,7 @@ export default function JsonToolPage() {
         JSON 포매터
       </h1>
       <p className="mt-3 text-sm text-[var(--color-muted)] sm:text-base">
-        붙여넣는 즉시 들여쓰기를 맞춰 다시 쓰고, 문법이 틀리면 몇 번째 줄 몇 번째
-        글자인지 보여 줍니다.
+        {intro}
       </p>
       <div className="mt-10">
         <JsonFormatter />

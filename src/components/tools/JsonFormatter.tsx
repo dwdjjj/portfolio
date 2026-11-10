@@ -55,17 +55,14 @@ export function JsonFormatter() {
         />
         <div className="space-y-1.5">
           <p>
-            <strong className="font-semibold text-[var(--color-fg)]">
-              입력한 JSON은 이 브라우저 안에서만 처리합니다.
-            </strong>{" "}
-            서버로 보내지 않고, localStorage·URL 어디에도 저장하지 않습니다.
+            입력한 내용은 서버로 보내지 않고 저장하지도 않습니다.
           </p>
           <p>
             <strong className="font-semibold text-[var(--color-fg)]">
-              숫자와 문자열은 적힌 그대로 둡니다.
+              큰 숫자도 그대로 둡니다.
             </strong>{" "}
-            JSON.parse를 거치지 않아 12345678901234567890 같은 큰 숫자도 자리수가
-            바뀌지 않습니다.
+            12345678901234567890 같은 값은 보통 JSON.parse를 거치면 반올림되지만,
+            여기서는 적힌 대로 나옵니다.
           </p>
         </div>
       </div>

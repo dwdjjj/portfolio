@@ -67,8 +67,7 @@ export function ColorConverter() {
         note={
           eyeDropperSupported === false && (
             <p className="mt-2 text-xs text-[var(--color-subtle)]">
-              이 브라우저는 스포이드를 지원하지 않습니다. Chrome·Edge 데스크톱에서
-              동작합니다.
+              스포이드는 Chrome·Edge 데스크톱에서만 됩니다.
             </p>
           )
         }
@@ -81,9 +80,9 @@ export function ColorConverter() {
               <Info aria-hidden className="mt-0.5 h-5 w-5 shrink-0 text-[var(--color-accent)]" />
               <p>
                 <strong className="font-semibold text-[var(--color-fg)]">
-                  sRGB 범위 밖이라 가까운 색으로 표시합니다.
+                  화면에 낼 수 없는 색(sRGB 범위 밖)이라 가장 가까운 색으로 바꿨습니다.
                 </strong>{" "}
-                아래 네 값은 모두 잘라낸 색 기준입니다.
+                아래 값도 바꾼 색 기준입니다.
               </p>
             </div>
           )}

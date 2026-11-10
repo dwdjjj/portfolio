@@ -4,10 +4,12 @@ import { ArrowLeft } from "lucide-react";
 import { Section } from "@/components/ui/Section";
 import { JwtDecoder } from "@/components/tools/JwtDecoder";
 
+const intro =
+  "토큰을 복사하여 붙여넣으면 헤더와 페이로드를 JSON 형태로 펼쳐 줍니다. 만료 시각과 남은 시간도 한국 시간 기준으로 확인이 가능합니다.";
+
 export const metadata: Metadata = {
   title: "JWT 디코더",
-  description:
-    "JWT의 헤더·페이로드와 만료 시각을 브라우저 안에서만 확인하는 디코더. 토큰을 서버로 보내지 않습니다.",
+  description: intro,
 };
 
 export default function JwtToolPage() {
@@ -24,8 +26,7 @@ export default function JwtToolPage() {
         JWT 디코더
       </h1>
       <p className="mt-3 text-sm text-[var(--color-muted)] sm:text-base">
-        토큰을 붙여넣으면 헤더와 페이로드를 JSON으로 펼치고, 만료까지 남은 시간을
-        한국 시간 기준으로 보여 줍니다.
+        {intro}
       </p>
       <div className="mt-10">
         <JwtDecoder />
