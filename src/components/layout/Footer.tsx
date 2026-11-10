@@ -1,5 +1,6 @@
 import type { ComponentType, SVGProps } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowUp, Mail, Rss } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 import { SiNotion } from "react-icons/si";
@@ -17,6 +18,12 @@ const connectLinks: ConnectLink[] = [
   { Icon: Rss, label: "Blog", href: site.blog, external: true },
   { Icon: Mail, label: "Email", href: `mailto:${site.email}`, external: false },
   { Icon: SiNotion, label: "Notion", href: site.notion, external: true },
+];
+
+// 모바일에서는 상단 내비가 숨겨지므로 새 페이지 진입점을 여기에도 둔다.
+const exploreLinks = [
+  { label: "Articles", href: "/articles" },
+  { label: "Tools", href: "/tools" },
 ];
 
 export function Footer() {
@@ -44,6 +51,21 @@ export function Footer() {
           </div>
 
           <nav aria-label="Social links" className="sm:col-span-2">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--color-subtle)] sm:text-right">
+              Explore
+            </p>
+            <ul className="mt-4 mb-8 flex flex-wrap gap-x-5 gap-y-2 sm:justify-end">
+              {exploreLinks.map(({ label, href }) => (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    className="text-sm text-[var(--color-muted)] transition-colors hover:text-[var(--color-fg)]"
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--color-subtle)] sm:text-right">
               Connect
             </p>
@@ -74,7 +96,7 @@ export function Footer() {
             © {new Date().getFullYear()} {site.shortName}. Built with Next.js · Deployed on Vercel.
           </p>
           <a
-            href="#about"
+            href="#top"
             className="group inline-flex items-center gap-1.5 text-[var(--color-muted)] transition-colors hover:text-[var(--color-fg)]"
           >
             맨 위로
