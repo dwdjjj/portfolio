@@ -14,13 +14,50 @@ export type ColorInput = {
   set: (text: string) => void;
 };
 
-// 받는 형식 중 가장 긴 것이 34자(oklch(62.796% 0.25768 29.23 / 0.5))라 공백 여유를 둔다.
+// 형식별 최대 글자 수. 실제로 쓸 만한 가장 긴 표기에 여유를 조금 뒀다.
+//   rgb   30자 ← rgb(100% 100% 100% / 0.555) 27자
+//   hsl   36자 ← hsla(359.9, 100.0%, 100.0%, 0.555) 34자
+//   oklch 40자 ← oklch(62.796% 0.25768 359.99 / 0.555) 37자
+const FUNC_LIMITS: [prefix: string, max: number][] = [
+  ["rgb", 30],
+  ["hsl", 36],
+];
 const MAX_LENGTH = 40;
+// HEX는 #rrggbbaa까지라 16진 숫자 8자리(# 포함 9자).
+const HEX_DIGITS = 8;
 // 색 표기에 쓰는 문자만 남긴다. 한글 등은 입력·붙여넣기 모두 지워진다.
 const DISALLOWED = /[^0-9a-zA-Z#%(),./;+\-\s]/g;
 
-function sanitize(text: string) {
-  return text.replace(DISALLOWED, "").slice(0, MAX_LENGTH);
+function limitFor(text: string) {
+  const head = text.trimStart().toLowerCase();
+  return FUNC_LIMITS.find(([prefix]) => head.startsWith(prefix))?.[1] ?? MAX_LENGTH;
+}
+
+const HEX_PARTIAL = new RegExp(`^\\s*#?[0-9a-fA-F]{0,${HEX_DIGITS}}\\s*$`);
+
+/** # 가 있거나 16진 숫자만 있으면 HEX를 입력하는 중으로 본다. */
+function isHexLike(text: string) {
+  return text.includes("#") || /^\s*[0-9a-fA-F]+\s*$/.test(text);
+}
+
+/**
+ * 입력칸에 들어갈 다음 값.
+ * 형식별 최대 길이(HEX 16진 8자리, rgb 30·hsl 36·그 밖 40자)를 넘거나 HEX에 다른 글자가 끼면
+ * 그 키 입력은 받지 않는다. 붙여넣기는 길이에 맞게 자른다.
+ */
+function nextValue(prev: string, raw: string, pasted: boolean) {
+  const filtered = raw.replace(DISALLOWED, "");
+  // 붙여넣은 글에서 지워진 문자 자리에 남는 끝 공백은 정리한다.
+  const allowed = pasted ? filtered.trimEnd() : filtered;
+  if (!isHexLike(allowed)) {
+    const max = limitFor(allowed);
+    if (allowed.length <= max) return allowed;
+    return pasted ? allowed.slice(0, max).trimEnd() : prev;
+  }
+  if (HEX_PARTIAL.test(allowed)) return allowed;
+  if (!pasted) return prev;
+  const from = allowed.slice(Math.max(0, allowed.indexOf("#")));
+  return /^#?[0-9a-fA-F]*/.exec(from)![0].replace(/[0-9a-fA-F]+/, (d) => d.slice(0, HEX_DIGITS));
 }
 
 /** 입력 문자열과 해석 결과. 값은 이 state에만 있고 어디에도 저장하지 않는다. */
@@ -91,8 +128,19 @@ export function ColorField({ id, label, input, placeholder, actions, note }: Col
           type="text"
           value={input.text}
           maxLength={MAX_LENGTH}
-          onChange={(e) => input.set(sanitize(e.target.value))}
-          onCompositionEnd={(e) => input.set(sanitize(e.currentTarget.value))}
+          onChange={(e) => {
+            const el = e.target;
+            const type = (e.nativeEvent as InputEvent).inputType;
+            const pasted = type === "insertFromPaste" || type === "insertFromDrop";
+            const next = nextValue(input.text, el.value, pasted);
+            if (next === input.text && el.value !== input.text) {
+              // 막힌 입력이면 커서를 친 자리 그대로 둔다(값이 되돌려지며 끝으로 튀는 것 방지).
+              const caret = (el.selectionStart ?? 0) - (el.value.length - input.text.length);
+              requestAnimationFrame(() => el.setSelectionRange(caret, caret));
+            }
+            input.set(next);
+          }}
+          onCompositionEnd={(e) => input.set(nextValue(input.text, e.currentTarget.value, false))}
           placeholder={placeholder}
           autoComplete="off"
           autoCorrect="off"
