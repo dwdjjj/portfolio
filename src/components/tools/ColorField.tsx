@@ -14,6 +14,15 @@ export type ColorInput = {
   set: (text: string) => void;
 };
 
+// 받는 형식 중 가장 긴 것이 34자(oklch(62.796% 0.25768 29.23 / 0.5))라 공백 여유를 둔다.
+const MAX_LENGTH = 40;
+// 색 표기에 쓰는 문자만 남긴다. 한글 등은 입력·붙여넣기 모두 지워진다.
+const DISALLOWED = /[^0-9a-zA-Z#%(),./;+\-\s]/g;
+
+function sanitize(text: string) {
+  return text.replace(DISALLOWED, "").slice(0, MAX_LENGTH);
+}
+
 /** 입력 문자열과 해석 결과. 값은 이 state에만 있고 어디에도 저장하지 않는다. */
 export function useColorInput(initial: string): ColorInput {
   const [state, setState] = useState(() => {
@@ -81,7 +90,9 @@ export function ColorField({ id, label, input, placeholder, actions, note }: Col
           id={id}
           type="text"
           value={input.text}
-          onChange={(e) => input.set(e.target.value)}
+          maxLength={MAX_LENGTH}
+          onChange={(e) => input.set(sanitize(e.target.value))}
+          onCompositionEnd={(e) => input.set(sanitize(e.currentTarget.value))}
           placeholder={placeholder}
           autoComplete="off"
           autoCorrect="off"
