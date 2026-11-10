@@ -1,14 +1,15 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 import { useTheme } from "next-themes";
 import { Moon, Sun } from "lucide-react";
 
-export function ThemeToggle() {
-  const [mounted, setMounted] = useState(false);
-  const { resolvedTheme, setTheme } = useTheme();
+const subscribe = () => () => {};
 
-  useEffect(() => setMounted(true), []);
+export function ThemeToggle() {
+  // 서버 렌더·하이드레이션 중에는 false, 그 뒤 클라이언트에서는 true (테마 아이콘 불일치 방지)
+  const mounted = useSyncExternalStore(subscribe, () => true, () => false);
+  const { resolvedTheme, setTheme } = useTheme();
 
   const isDark = resolvedTheme === "dark";
 
