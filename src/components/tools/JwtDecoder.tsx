@@ -80,7 +80,7 @@ export function JwtDecoder() {
       <div>
         <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
           <label htmlFor="jwt-input" className="text-sm font-semibold">
-            JWT 토큰
+            토큰
           </label>
           <div className="flex gap-2">
             <button

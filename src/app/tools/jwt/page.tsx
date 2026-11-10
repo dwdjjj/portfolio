@@ -24,8 +24,8 @@ export default function JwtToolPage() {
         JWT 디코더
       </h1>
       <p className="mt-3 text-sm text-[var(--color-muted)] sm:text-base">
-        토큰을 붙여넣으면 헤더와 페이로드를 펼쳐 보여주고, 만료 시각을 한국
-        시간으로 알려줍니다.
+        토큰을 붙여넣으면 헤더와 페이로드를 JSON으로 펼치고, 만료까지 남은 시간을
+        한국 시간 기준으로 보여 줍니다.
       </p>
       <div className="mt-10">
         <JwtDecoder />

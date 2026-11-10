@@ -83,7 +83,7 @@ export function ArticleView({ articles, filter, onSelect }: ArticleViewProps) {
 
       {visible.length === 0 ? (
         <p className="mt-16 text-center text-sm text-[var(--color-muted)]">
-          지금은 이 카테고리에 모은 글이 없습니다.
+          이 분야로 분류된 새 글이 아직 없습니다.
         </p>
       ) : (
         <ul className="mt-8 divide-y divide-[var(--color-border)] border-y border-[var(--color-border)]">

@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/Badge";
 
 export const metadata: Metadata = {
   title: "Tools",
-  description: "브라우저 안에서만 동작하는 작은 개발 도구 모음.",
+  description: "개발하다 필요해서 만든 도구들. 입력한 값은 브라우저 밖으로 나가지 않습니다.",
 };
 
 export default function ToolsPage() {
@@ -16,8 +16,8 @@ export default function ToolsPage() {
         Tools
       </h1>
       <p className="mt-3 text-sm text-[var(--color-muted)] sm:text-base">
-        개발하면서 자주 쓰는 작은 도구들입니다. 입력한 내용은 모두 브라우저
-        안에서만 처리합니다.
+        개발하다 필요해서 만든 도구를 모아 둡니다. 입력한 값은 브라우저 밖으로
+        나가지 않습니다.
       </p>
 
       <ul className="mt-10 grid gap-5 sm:grid-cols-2">
